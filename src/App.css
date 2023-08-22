@@ -1,38 +1,235 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  /* Font - 300, 400, 500 - 1.125rem */
+  --font: "Rubik", sans-serif;
+
+  /* Primary Colors */
+  --blue: hsl(246, 80%, 60%);
+  --soft-blue-play: hsl(195, 74%, 62%);
+  --light-red-work: hsl(15, 100%, 70%);
+  --light-red-study: hsl(348, 100%, 68%);
+  --lime-green-exercise: hsl(145, 58%, 55%);
+  --violet-social: hsl(264, 64%, 52%);
+  --soft-orange-self-care: hsl(43, 84%, 65%);
+
+  /* Neutral Colors */
+  --very-dark-blue: hsl(226, 43%, 10%);
+  --dark-blue: hsl(235, 46%, 20%);
+  --desaturated-blue: hsl(235, 45%, 61%);
+  --pale-blue: hsl(236, 100%, 87%);
+  --white: hsl(0, 0%, 100%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  min-height: 100svh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: var(--very-dark-blue);
 }
 
-.App-link {
-  color: #61dafb;
+/* ============================== Main Container ============================== */
+.main-container {
+  width: 100%;
+  display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* ============================== Cards ============================== */
+/* ========= Top Cards ========= */
+.top-cards {
+  display: flex;
+  margin: 0 2rem 2rem 2rem;
+  gap: 2rem;
+}
+
+/* ========= Bottom Cards ========= */
+.bottom-cards {
+  display: flex;
+  margin: 0 2rem;
+  gap: 2rem;
+}
+
+/* ============================== Profile Container ============================== */
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  height: 35rem;
+  width: 18rem;
+}
+
+.user-info {
+  background-color: var(--blue);
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.user-image {
+  width: 5.5rem;
+  height: 5.5rem;
+  border: 0.2rem solid var(--white);
+  border-radius: 50%;
+  margin-bottom: 2rem;
+}
+
+.user-info h1 {
+  color: var(--white);
+  font-weight: 300;
+  font-size: 3rem;
+  margin-bottom: 3.7rem;
+}
+
+.report {
+  color: var(--pale-blue);
+  font-weight: 400;
+}
+
+.interval {
+  background-color: var(--dark-blue);
+  display: flex;
+  flex-direction: column-reverse;
+  border-radius: 1rem;
+  padding: 0 0 1rem 0;
+}
+
+.interval p {
+  padding-top: 1rem;
+  padding-left: 2rem;
+  line-height: 2.5rem;
+  color: var(--desaturated-blue);
+  cursor: pointer;
+}
+
+.interval p:hover {
+  color: var(--pale-blue);
+}
+
+.interval p:focus {
+  color: var(--pale-blue);
+}
+
+/* ============================== Work graphic ============================== */
+.work-graphic {
+  background-color: var(--light-red-work);
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  z-index: 0;
+  border-radius: 1rem;
+}
+
+/* ============================== Play graphic ============================== */
+.play-graphic {
+  background-color: var(--soft-blue-play);
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  z-index: 0;
+  border-radius: 1rem;
+}
+
+/* ============================== Study graphic ============================== */
+.study-graphic {
+  background-color: var(--light-red-study);
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  z-index: 0;
+  border-radius: 1rem;
+}
+
+/* ============================== Exercise graphic ============================== */
+.exercise-graphic {
+  background-color: var(--lime-green-exercise);
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  z-index: 0;
+  border-radius: 1rem;
+}
+
+/* ============================== Social graphic ============================== */
+.social-graphic {
+  background-color: var(--violet-social);
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  z-index: 0;
+  border-radius: 1rem;
+}
+
+/* ============================== Self Care graphic ============================== */
+.self-care-graphic {
+  background-color: var(--soft-orange-self-care);
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  z-index: 0;
+  border-radius: 1rem;
+}
+
+/* ============================== Card Containers ============================== */
+
+.exercise-graphic .icon {
+  width: 6rem;
+  height: 5em;
+  padding-right: 1rem;
+}
+
+.social-graphic .icon {
+  width: 6rem;
+  height: 5em;
+  padding-right: 1rem;
+}
+
+.self-care-graphic .icon {
+  width: 6rem;
+  height: 5em;
+  padding-right: 1rem;
+}
+
+.info {
+  background-color: var(--dark-blue);
+  z-index: 1;
+  padding: 2rem;
+  border-radius: 1rem;
+  height: 13rem;
+  width: 18rem;
+  margin-top: -1.5rem;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title .ellipsis {
+  width: 1rem;
+  height: 0.3rem;
+}
+
+.info h4 {
+  font-size: 1.125rem;
+  color: var(--white);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.info h2 {
+  color: var(--white);
+  font-weight: 300;
+  font-size: 4.4rem;
+}
+
+.info p {
+  font-size: 1.125rem;
+  color: var(--pale-blue);
 }
