@@ -30,31 +30,33 @@
 
 body {
   min-height: 100svh;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--very-dark-blue);
 }
 
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 /* ============================== Main Container ============================== */
 .main-container {
-  width: 100%;
+  width: 80%;
   display: flex;
 }
 
 /* ============================== Cards ============================== */
-/* ========= Top Cards ========= */
-.top-cards {
+
+.cards {
   display: flex;
   margin: 0 2rem 2rem 2rem;
   gap: 2rem;
-}
-
-/* ========= Bottom Cards ========= */
-.bottom-cards {
-  display: flex;
-  margin: 0 2rem;
-  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 /* ============================== Profile Container ============================== */
@@ -62,7 +64,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 35rem;
-  width: 18rem;
+  width: 30rem;
 }
 
 .user-info {
@@ -99,24 +101,27 @@ body {
   padding: 0 0 1rem 0;
 }
 
-.interval p {
+.interval button {
   padding-top: 1rem;
+  text-align: left;
   padding-left: 2rem;
   line-height: 2.5rem;
+  border: none;
+  background-color: transparent;
   color: var(--desaturated-blue);
   cursor: pointer;
 }
 
-.interval p:hover {
+.interval button:hover {
   color: var(--pale-blue);
 }
 
-.interval p:focus {
+.interval button:focus {
   color: var(--pale-blue);
 }
 
 /* ============================== Work graphic ============================== */
-.work-graphic {
+.graphic-Work {
   background-color: var(--light-red-work);
   display: flex;
   flex-direction: column;
@@ -126,7 +131,7 @@ body {
 }
 
 /* ============================== Play graphic ============================== */
-.play-graphic {
+.graphic-Play {
   background-color: var(--soft-blue-play);
   display: flex;
   flex-direction: column;
@@ -136,7 +141,7 @@ body {
 }
 
 /* ============================== Study graphic ============================== */
-.study-graphic {
+.graphic-Study {
   background-color: var(--light-red-study);
   display: flex;
   flex-direction: column;
@@ -146,7 +151,7 @@ body {
 }
 
 /* ============================== Exercise graphic ============================== */
-.exercise-graphic {
+.graphic-Exercise {
   background-color: var(--lime-green-exercise);
   display: flex;
   flex-direction: column;
@@ -156,7 +161,7 @@ body {
 }
 
 /* ============================== Social graphic ============================== */
-.social-graphic {
+.graphic-Social {
   background-color: var(--violet-social);
   display: flex;
   flex-direction: column;
@@ -166,7 +171,7 @@ body {
 }
 
 /* ============================== Self Care graphic ============================== */
-.self-care-graphic {
+.graphic-SelfCare {
   background-color: var(--soft-orange-self-care);
   display: flex;
   flex-direction: column;
@@ -177,19 +182,7 @@ body {
 
 /* ============================== Card Containers ============================== */
 
-.exercise-graphic .icon {
-  width: 6rem;
-  height: 5em;
-  padding-right: 1rem;
-}
-
-.social-graphic .icon {
-  width: 6rem;
-  height: 5em;
-  padding-right: 1rem;
-}
-
-.self-care-graphic .icon {
+.icon {
   width: 6rem;
   height: 5em;
   padding-right: 1rem;
@@ -232,4 +225,10 @@ body {
 .info p {
   font-size: 1.125rem;
   color: var(--pale-blue);
+}
+
+.attribution {
+  margin-top: 3rem;
+  text-align: center;
+  color: var(--white);
 }

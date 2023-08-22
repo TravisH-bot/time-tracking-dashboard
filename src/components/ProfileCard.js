@@ -1,12 +1,28 @@
 import profileImage from "../images/image-jeremy.png";
 
-const ProfileCard = () => {
+const ProfileCard = (props) => {
+  const times = ["Daily", "Weekly", "Monthly"];
+
   return (
     <div className="profile-container">
       <div className="interval">
-        <p>Monthly</p>
-        <p>Weekly</p>
-        <p>Daily</p>
+        {times.map((item) => {
+          const styles =
+            props.timeframe === item
+              ? { fontWeight: 500, color: "#fff" }
+              : null;
+
+          return (
+            <button
+              id={item}
+              className="link"
+              onClick={props.handleClick}
+              style={styles}
+            >
+              {item}
+            </button>
+          );
+        })}
         <div className="user-info">
           <img
             className="user-image"

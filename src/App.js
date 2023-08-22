@@ -1,32 +1,40 @@
 import "./App.css";
+import { useState } from "react";
+import data from "./data.json";
+import TrackerCard from "./components/TimeCard";
 import ProfileCard from "./components/ProfileCard";
-import WorkCard from "./components/WorkCard";
-import PlayCard from "./components/PlayCard";
-import StudyCard from "./components/StudyCard";
-import ExerciseCard from "./components/ExerciseCard";
-import SocialCard from "./components/SocialCard";
-import SelfCareCard from "./components/SelfCareCard";
 import Footer from "./components/Footer";
 
 function App() {
+  const [timeframe, setTimeframe] = useState("Daily");
+
+  const handleClick = (e) => {
+    setTimeframe(e.target.innerText);
+  };
+
   return (
     <div className="App">
       <div className="main-container">
-        <ProfileCard />
+        <ProfileCard handleClick={handleClick} timeframe={timeframe} />
+
         <div className="cards">
-          <div className="top-cards">
-            <WorkCard />
-            <PlayCard />
-            <StudyCard />
-          </div>
-          <div className="bottom-cards">
-            <ExerciseCard />
-            <SocialCard />
-            <SelfCareCard />
-          </div>
+          {data.map((item, index) => {
+            return (
+              <TrackerCard
+                key={index}
+                id={index}
+                title={item.title}
+                current={item["timeframes"][timeframe.toLowerCase()]["current"]}
+                previous={
+                  item["timeframes"][timeframe.toLowerCase()]["previous"]
+                }
+                timeframe={timeframe}
+              />
+            );
+          })}
         </div>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
