@@ -46,8 +46,8 @@ body {
 
 /* ============================== Main Container ============================== */
 .main-container {
-  width: 80%;
   display: flex;
+  width: 70%;
 }
 
 /* ============================== Cards ============================== */
@@ -64,7 +64,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 35rem;
-  width: 30rem;
+  width: 36rem;
 }
 
 .user-info {
