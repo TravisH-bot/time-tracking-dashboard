@@ -234,7 +234,7 @@ body {
 }
 
 .attribution {
-  margin-top: 3rem;
+  margin-top: 2rem;
   text-align: center;
   color: var(--white);
 }
@@ -328,5 +328,10 @@ body {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
+  }
+
+  .attribution {
+    font-size: 0.9rem;
+    text-align: center;
   }
 }
