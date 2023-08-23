@@ -34,13 +34,15 @@ const TrackerCard = (props) => {
             <h4>{props.title}</h4>
             <img className="ellipsis" src={ellipsis} alt="ellipsis icon"></img>
           </div>
-          <div className="current-hours">
-            <h2>{props.current}hrs</h2>
-          </div>
-          <div className="previous-hours">
-            <p>
-              {timeConvert} - {props.previous}hrs
-            </p>
+          <div className="hours">
+            <div className="current-hours">
+              <h2>{props.current}hrs</h2>
+            </div>
+            <div className="previous-hours">
+              <p>
+                {timeConvert} - {props.previous}hrs
+              </p>
+            </div>
           </div>
         </div>
       </div>

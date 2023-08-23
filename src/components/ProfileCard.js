@@ -6,31 +6,35 @@ const ProfileCard = (props) => {
   return (
     <div className="profile-container">
       <div className="interval">
-        {times.map((item) => {
-          const styles =
-            props.timeframe === item
-              ? { fontWeight: 500, color: "#fff" }
-              : null;
+        <div className="intervals">
+          {times.map((item) => {
+            const styles =
+              props.timeframe === item
+                ? { fontWeight: 500, color: "#fff" }
+                : null;
 
-          return (
-            <button
-              id={item}
-              className="link"
-              onClick={props.handleClick}
-              style={styles}
-            >
-              {item}
-            </button>
-          );
-        })}
+            return (
+              <button
+                id={item}
+                className="link"
+                onClick={props.handleClick}
+                style={styles}
+              >
+                {item}
+              </button>
+            );
+          })}
+        </div>
         <div className="user-info">
           <img
             className="user-image"
             src={profileImage}
             alt="user profile image"
           ></img>
-          <h5 className="report">Report for</h5>
-          <h1>Jeremy Robson</h1>
+          <div className="name">
+            <h5 className="report">Report for</h5>
+            <h1>Jeremy Robson</h1>
+          </div>
         </div>
       </div>
     </div>
