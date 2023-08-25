@@ -47,7 +47,7 @@ body {
 /* ============================== Main Container ============================== */
 .main-container {
   display: flex;
-  width: 70%;
+  width: 60%;
 }
 
 /* ============================== Cards ============================== */
@@ -240,7 +240,11 @@ body {
 }
 
 /* ============================== Media Queries ============================== */
-
+@media screen and (max-width: 1920px) {
+  .main-container {
+    width: 70%;
+  }
+}
 /* ============================== Main Container ============================== */
 @media screen and (max-width: 768px) {
   .main-container {
